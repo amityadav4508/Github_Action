@@ -1,6 +1,8 @@
 # its manual work flow
 name: First Workflow
-on: workflow_dispatch
+on:
+  push:
+  # workflow_dispatch:
 jobs:
   first-jobs:
     runs-on: ubuntu-latest
