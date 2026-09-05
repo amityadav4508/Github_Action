@@ -11,3 +11,6 @@ jobs:
         run: echo "Hellow this is first workflow in github action"
       - name: Bye Github Action
         run: echo "Bye github action"
+        #  write below code for check conditionally, exit 1 means code fial with exit 0  then code pass
+      - name: fail job intentinolly
+        run: exit 1
