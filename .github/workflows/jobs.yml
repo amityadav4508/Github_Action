@@ -1,7 +1,10 @@
 name: Jobs  Test
 
 on:
-  push:
+  # this is  for sequintial workflow
+  workflow_run:
+    workflows: [First Workflow]
+  # push:
   # workflow_dispatch:
 
 jobs:
@@ -24,6 +27,7 @@ jobs:
         run: test -f scrip.js
 
   validate-code:
+    # this is  for sequintial jobs
     needs: [validate-html, validate-js]
     runs-on: ubuntu-latest
     steps:
