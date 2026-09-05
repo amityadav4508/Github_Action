@@ -11,6 +11,7 @@ on:
 
 jobs:
   validate-html:
+    if: ${{github.event.workflow_run.conclusion == 'success'}}
     runs-on: ubuntu-latest
     steps:
       - name: Get repo code
@@ -20,6 +21,8 @@ jobs:
         run: test -f index.html
 
   validate-js:
+    if: ${{github.event.workflow_run.conclusion == 'success'}}
+
     runs-on: ubuntu-latest
     steps:
       - name: Get repo code
@@ -29,6 +32,8 @@ jobs:
         run: test -f scrip.js
 
   validate-code:
+    if: ${{github.event.workflow_run.conclusion == 'success'}}
+
     # this is  for sequintial jobs
     needs: [validate-html, validate-js]
     runs-on: ubuntu-latest
