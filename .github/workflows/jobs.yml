@@ -7,7 +7,6 @@ on:
 jobs:
   validate-file:
     runs-on: ubuntu-latest
-
     steps:
       - name: Get repo code
         uses: actions/checkout@v4
