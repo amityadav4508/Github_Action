@@ -4,6 +4,8 @@ on:
   # this is  for sequintial workflow
   workflow_run:
     workflows: [First Workflow]
+    types:
+      - completed
   # push:
   # workflow_dispatch:
 
