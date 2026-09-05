@@ -1,5 +1,4 @@
 name: Validate Files
-
 on:
   # push:
   workflow_dispatch:

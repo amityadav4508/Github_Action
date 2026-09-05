@@ -1,11 +1,11 @@
 name: Jobs  Test
 
 on:
-  # push:
-  workflow_dispatch:
+  push:
+  # workflow_dispatch:
 
 jobs:
-  validate-file:
+  validate-html:
     runs-on: ubuntu-latest
     steps:
       - name: Get repo code
@@ -14,8 +14,24 @@ jobs:
       - name: Validate HTML file
         run: test -f index.html
 
+  validate-js:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repo code
+        uses: actions/checkout@v4
+
       - name: Validate JS file
         run: test -f scrip.js
+
+  validate-Code:
+    # needs: [validate-html, validate-js]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repo code
+        uses: actions/checkout@v4
+
+      - name: Validate Html code
+        run: npx htmlhint --check inndex.html
 
       - name: Validate JS code
         run: node --check scrip.js
