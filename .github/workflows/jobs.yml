@@ -23,7 +23,7 @@ jobs:
       - name: Validate JS file
         run: test -f scrip.js
 
-  validate-Code:
+  validate-code:
     # needs: [validate-html, validate-js]
     runs-on: ubuntu-latest
     steps:
@@ -31,7 +31,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Validate Html code
-        run: npx htmlhint --check inndex.html
+        run: npx htmlhint inndex.html
 
       - name: Validate JS code
         run: node --check scrip.js
